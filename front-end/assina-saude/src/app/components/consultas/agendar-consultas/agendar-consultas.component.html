@@ -1,0 +1,52 @@
+<div class="cards">
+    <div class="card">
+        <div class="form-field">
+            <p>Especialidade</p>
+            <mat-form-field color="accent">
+                <mat-label>p.e: psicologa</mat-label>
+                <mat-select disableRipple>
+                <mat-option value="1">Option 1</mat-option>
+                <mat-option value="2">Option 2</mat-option>
+                <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <p>Profissional</p>
+            <mat-form-field color="accent">
+                <mat-label>Escolha um profissional</mat-label>
+                <mat-select disableRipple>
+                <mat-option value="1">Option 1</mat-option>
+                <mat-option value="2">Option 2</mat-option>
+                <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-field">
+            <p>Data</p>
+            <mat-form-field color="accent">
+                <mat-label>Escolha um dia</mat-label>
+                <input (dataChange)="validDate($event.value)" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>          
+        </div>
+        <div class="form-field">
+            <p>Horario</p>
+            <mat-form-field color="accent">
+                <mat-label>Escolha um horario</mat-label>
+                <mat-select>
+                <mat-option value="1">Option 1</mat-option>
+                <mat-option value="2">Option 2</mat-option>
+                <mat-option value="3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <button mat-stroked-button color="accent">Agendar</button>
+
+    </div>
+    <div class="card warning">
+        <p class="title m0">Não estamos atendendo presencialmente</p>
+        <p class="subtitle m0">Agende sua consulta online</p>
+    </div>
+</div>

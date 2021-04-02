@@ -1,0 +1,34 @@
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    margin: 20px 2vh 0;
+    padding: 15px;
+    max-width: 400px;
+    color: hsla(0,0%,100%,.7);;
+    border-radius: 7px;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    background-color: #424242;
+}
+
+.title{
+    color: #fff;
+    font-size: 20px;
+}
+
+.subtitle{
+    padding-left: 15px;
+}
+
+.m15 {
+    margin: 0 15px;
+}
+
+.p15{
+    padding: 15px
+}
+
