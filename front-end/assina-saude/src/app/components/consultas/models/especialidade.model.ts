@@ -1,0 +1,3 @@
+interface EspecialidadeModel {
+    nome: string
+} 

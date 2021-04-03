@@ -1,11 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Observable, Observer} from 'rxjs';
-import { CardConsultasComponent } from './card-consultas/card-consultas.component';
+import { ConsultaService } from './consultas.service';
+import { ConsultaModel } from './models/consulta.model';
 
-export interface ASTab {
-  label: string;
-  content: string;
-}
 
 
 @Component({
@@ -13,14 +10,24 @@ export interface ASTab {
   templateUrl: './consultas.component.html',
   styleUrls: ['./consultas.component.css']
 })
-export class ConsultasComponent{
+export class ConsultasComponent implements OnInit{
   
-  asyncTabs : Observable<ASTab[]>;
+  constructor(private consultaService : ConsultaService) { }
 
-  constructor() {}
-   }
+  consultas: ConsultaModel;
 
-    
+  ngOnInit(): void {
+    this.getConsultas()
+  }
+
+  getConsultas(){
+    this.consultaService.getConsultas().subscribe(data => {
+      console.log(data)
+      this.consultas = data
+    })
+  }
+
+}
     
   
   

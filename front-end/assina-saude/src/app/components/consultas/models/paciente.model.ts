@@ -1,0 +1,3 @@
+interface PacienteModel {
+    nome: string
+}

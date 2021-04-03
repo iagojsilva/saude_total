@@ -1,42 +1,23 @@
-<div class="cards p15">
-    <div class="card">
-        <mat-chip-list aria-label="Fish selection">
-            <mat-chip color="accent" selected>Hoje</mat-chip>
-        </mat-chip-list>
-        <div class="title p15">Chamada de video com a   
-            Danieela Correia 
-        </div>
-        <p class="subtitle">CRM - 1920902</p>
-        <span class="infos p15">Hoje as 09:00 AM</span>
-        <!-- <div class="chip p15">
-            <mat-chip-list aria-label="Fish selection">
-                <mat-chip color="primary" selected>Hoje</mat-chip>
-            </mat-chip-list>
-        </div> -->
-        <div class="btns p15">
-            <button mat-stroked-button color="accent" >Adiar</button>
-            <button class="m15" mat-stroked-button color="warn">Cancelar</button>
-        </div>
+<div class="card">
+    <mat-chip-list aria-label="Fish selection">
+        <mat-chip color="accent" selected>Hoje</mat-chip>
+    </mat-chip-list>
+    <div class="title p15">Chamada de video com a   
+        {{profissional}} 
     </div>
-    <div class="card">
+    <p class="subtitle">CRM - {{crm}}</p>
+    <p class="subtitle">{{especialidade}}</p>
+    <span class="infos p15">{{data | date}} as {{horario_disponiveis}} </span>
+    <!-- <div class="chip p15">
         <mat-chip-list aria-label="Fish selection">
-            <mat-chip color="accent">Amanha</mat-chip>
+            <mat-chip color="primary" selected>Hoje</mat-chip>
         </mat-chip-list>
-        <div class="title p15">Chamada de video com a   
-            Danieela Correia 
-        </div>
-        <p class="subtitle">CRM - 1920902</p>
-        <span class="infos p15">Hoje as 09:00 AM</span>
-        <!-- <div class="chip p15">
-            <mat-chip-list aria-label="Fish selection">
-                <mat-chip color="primary" selected>Hoje</mat-chip>
-            </mat-chip-list>
-        </div> -->
-        <div class="btns p15">
-            <button mat-stroked-button color="accent" >Adiar</button>
-            <button class="m15" mat-stroked-button color="warn">Cancelar</button>
-        </div>
+    </div> -->
+    <div class="btns p15">
+        <button mat-stroked-button color="accent" >Adiar</button>
+        <button class="m15" mat-stroked-button color="warn">Cancelar</button>
     </div>
-    
 </div>
+ 
+    
 
