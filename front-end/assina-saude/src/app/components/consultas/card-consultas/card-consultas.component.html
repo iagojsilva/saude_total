@@ -14,8 +14,8 @@
         </mat-chip-list>
     </div> -->
     <div class="btns p15">
-        <button mat-stroked-button color="accent" >Adiar</button>
-        <button class="m15" mat-stroked-button color="warn">Cancelar</button>
+        <button (click)="openDialog(id)" mat-stroked-button color="accent" >Adiar</button>
+        <button (click)='delete()' class="m15" mat-stroked-button color="warn">Cancelar</button>
     </div>
 </div>
  

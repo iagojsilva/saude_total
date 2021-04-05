@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/assina-saude/",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

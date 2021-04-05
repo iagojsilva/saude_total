@@ -1,24 +1,36 @@
+<mat-progress-bar *ngIf="request" mode="query"></mat-progress-bar>
+
+
 <div class="cards">
     <div class="card">
         <div class="form-field">
             <p>Especialidade</p>
             <mat-form-field color="accent">
                 <mat-label>p.e: psicologa</mat-label>
-                <mat-select disableRipple>
-                <mat-option value="1">Option 1</mat-option>
-                <mat-option value="2">Option 2</mat-option>
-                <mat-option value="3">Option 3</mat-option>
+                <mat-select (selectionChange)="especialidadeSetter($event.value)">
+                        <mat-option 
+                            *ngFor='let especialidade of especialidades' 
+                            [value]="especialidade.id"
+                            >
+                            {{especialidade.nome}}
+                        </mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div class="form-field">
             <p>Profissional</p>
-            <mat-form-field color="accent">
+            <mat-form-field color="accent" >
                 <mat-label>Escolha um profissional</mat-label>
-                <mat-select disableRipple>
-                <mat-option value="1">Option 1</mat-option>
-                <mat-option value="2">Option 2</mat-option>
-                <mat-option value="3">Option 3</mat-option>
+                <mat-select 
+                    [disabled]="profissionaisData.length == 0" 
+                    disableRipple 
+                    (selectionChange)="profissionalSetter($event.value)">
+                    <div *ngIf='profissionaisData.length >=1'>
+                        <mat-option 
+                        *ngFor="let profissional of profissionaisData" 
+                        [value]="profissional.id">
+                        {{profissional.nome}}</mat-option>
+                    </div>
                 </mat-select>
             </mat-form-field>
         </div>
@@ -26,23 +38,46 @@
             <p>Data</p>
             <mat-form-field color="accent">
                 <mat-label>Escolha um dia</mat-label>
-                <input (dataChange)="validDate($event.value)" matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <input 
+                    (dateInput)="validDate($event.value)" 
+                    matInput 
+                    [matDatepicker]="picker"
+                    [disabled]='input'>
+                <mat-datepicker-toggle 
+                    matSuffix 
+                    [for]="picker">
+                </mat-datepicker-toggle>
+                <mat-datepicker 
+                    [disabled]="profissionalEscolhido == null"
+                    [dateClass]="dateClass" 
+                    #picker>
+                </mat-datepicker>
             </mat-form-field>          
         </div>
         <div class="form-field">
             <p>Horario</p>
             <mat-form-field color="accent">
                 <mat-label>Escolha um horario</mat-label>
-                <mat-select>
-                <mat-option value="1">Option 1</mat-option>
-                <mat-option value="2">Option 2</mat-option>
-                <mat-option value="3">Option 3</mat-option>
+                <mat-select 
+                    (selectionChange)='horarioSetter($event.value)' 
+                    [disabled]="dataEscolhida == null">
+                    <div *ngFor="let profissional of profissionaisData">
+                        <div *ngIf="profissional.id == profissionalEscolhido">
+
+                            <mat-option 
+                                *ngFor="let horarios of profissional.horario_disponiveis" 
+                                [value]="horarios">
+                            {{horarios}}</mat-option>
+                        </div>
+                    </div>
                 </mat-select>
             </mat-form-field>
         </div>
-        <button mat-stroked-button color="accent">Agendar</button>
+        <a 
+            [routerLink]="['/confirmation']"
+            (click)="createNewConsulta()" 
+            [disabled]="horarioEscolhido == null" 
+            mat-stroked-button color="accent">Agendar</a>
 
     </div>
     <div class="card warning">

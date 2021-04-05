@@ -5,12 +5,21 @@ import { CommonModule } from '@angular/common';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
 import { ConsultasComponent } from './consultas.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ConfirmacaoComponent } from './confirmacao/confirmacao.component';
+import { RouterModule } from '@angular/router';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import {AdiarDialog } from './card-consultas/adiar-dialog/adiar';
 
 @NgModule({
     imports: [
         CommonModule,
         AngularMaterialModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule,
+        MatProgressBarModule,
+        MatDialogModule
     ],
     exports: [
         ConsultasComponent
@@ -18,7 +27,9 @@ import {HttpClientModule} from '@angular/common/http';
     declarations: [
         CardConsultasComponent,
         AgendarConsultasComponent,
-        ConsultasComponent
+        ConsultasComponent,
+        ConfirmacaoComponent,
+        AdiarDialog
     ]
 })
 

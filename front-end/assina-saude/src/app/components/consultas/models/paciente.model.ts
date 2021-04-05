@@ -1,3 +1,5 @@
-interface PacienteModel {
+export interface PacienteModel {
     nome: string
+    id?: string
+
 }

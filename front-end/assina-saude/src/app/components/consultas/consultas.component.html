@@ -3,21 +3,26 @@
     <mat-tab-group mat-align-tabs="center" backgroundColor="accent">
         <mat-tab >
             <ng-template mat-tab-label>Minhas Consultas</ng-template>
-            <div class="cards p15" *ngFor='let consulta of consultas'>
+            <div class="cards p15">
+
                 <as-card-consultas 
-                    style="height: 100vh;"
-                    [profisional]='consulta.profisional'
+                    *ngFor='let consulta of consultas'
+                    [profissional]='consulta.profissional'
                     [especialidade]='consulta.especialidade'
-                    [horario_disponivel]='consulta.horario_disponiveis'
+                    [horario_disponiveis]='consulta.horario_disponiveis'
                     [data]='consulta.data'
                     [crm]='consulta.crm'
+                    [id]='consulta.id'
                     >
                 </as-card-consultas>
             </div>
         </mat-tab>
         <mat-tab>
             <ng-template mat-tab-label>Agendar Consulta</ng-template>
-            <as-agendar-consultas></as-agendar-consultas>
+            <as-agendar-consultas 
+                [especialidades]='especialidades'
+                >
+            </as-agendar-consultas>
         </mat-tab>
     </mat-tab-group>
 </div>

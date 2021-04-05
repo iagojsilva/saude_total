@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsultasModule } from './components/consultas/consultas.module';
 import {MatNativeDateModule} from '@angular/material/core';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     BrowserModule,
     AppRoutingModule,
     ConsultasModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    RouterModule
   ],
   providers: [MatNativeDateModule],
   schemas: [],

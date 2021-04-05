@@ -1,0 +1,40 @@
+<mat-progress-bar *ngIf="!infos.length else main" mode="query"></mat-progress-bar>
+
+<ng-template #main>
+    <div class="cards">
+        <div class="card">
+        
+            <h2 class="title p15">Tudo certo!</h2>
+            <p class="subtitle">Entraremos em contato com um dia de antecedência para confirmar sua presença</p>
+        
+        </div>
+        <div class="card">
+            <div class="content p15">
+                <h1 class="titler">Resumo</h1>
+                <p class="label subtitle">Especialidade</p>
+                <p class="value">{{infos[0].especialidade}}</p>
+                <p class="label subtitle">Profissional</p>
+                <p class="value">{{infos[0].profissional}}</p>
+                <p class="label subtitle">Data</p>
+                <p class="value">{{(infos[0].data | date)}}</p>
+                <p class="label subtitle">Horario</p>
+                <p class="value">{{infos[0].horario_disponiveis}}</p>
+            </div>
+            
+            <!-- <div class="chip p15">
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary" selected>Hoje</mat-chip>
+                </mat-chip-list>
+            </div> -->
+            
+        </div>
+        <div class="btns p15">
+            <button 
+            mat-stroked-button
+            color="accent"
+            [routerLink]="['/home']"
+            >
+            Voltar para tela inicial</button>
+        </div>
+    </div>
+</ng-template>

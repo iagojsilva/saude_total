@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Pra quando você gostaria de adiar?</h1>
+<div mat-dialog-content>
+    <div class="form-field">
+        <p>Data</p>
+        <mat-form-field color="accent" apperence="fill">
+            <mat-label>Escolha um dia</mat-label>
+            <input 
+                (dateInput)="saveDate($event.value)" 
+                matInput 
+                [matDatepicker]="picker"
+                >
+            <mat-datepicker-toggle 
+                matSuffix 
+                [for]="picker">
+            </mat-datepicker-toggle>
+            <mat-datepicker 
+                #picker>
+            </mat-datepicker>
+        </mat-form-field>          
+    </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button 
+    mat-button
+    mat-stroked-button 
+    color='accent' 
+    [disabled]='!novaData'
+    (click)='update()'
+    >
+    Adiar</button>
+</div>
