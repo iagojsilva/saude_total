@@ -6,7 +6,7 @@ Bem-vindo ao app AssinaSaúde simplificado!
 
 > Nesse projeto você vera pouquissimo commits, pois eu os esqueci, e so lembrei no final do projeto.
 
-[Python](https://python.org) — _python3.6_ ; )
+[Python](https://python.org) — foi usado _python3.6_ nesse projeto. 
 
 ### Running API
 
@@ -23,7 +23,7 @@ dentro da pasta front-end/assina-saude instale as dependencias do node e rode o 
 ```console
 $ npm install
 $ ng serve
-
+```
 ### Host
 
 O app também está na internet hospedado no meu dominio
